@@ -44,9 +44,13 @@ void *my_malloc(size_t size) {
     return (void *)(header + 1);
 }
 
-int main(int argc, char *argv[])
-{
-    char *str = malloc((strlen("Hello World") - 1));
-    char *str_part_two = my_malloc((strlen("hello world") - 1));
+int main(int argc, char *argv[]) {
+    char *str = my_malloc(strlen("Hello World") + 1);
+    strcpy(str, "Hello World");
+    printf("%s\n", str);
+
+    char *str_part_two = my_malloc(strlen("hello world") + 1);
+    strcpy(str_part_two, "hello world");
+    printf("%s\n", str_part_two);
     return 0;
 }
